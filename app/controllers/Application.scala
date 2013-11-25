@@ -42,6 +42,10 @@ object Application extends Controller {
     case Some(idt) => idt
   }
 
+  def normalizeURL(url:String): String = {
+    if (url.contains("://") == false) { "http://"+url } else url
+  }
+
   def addURL(data: FormData) = {
     val id = getID(data.id)
     val rl = URL.findById(id)
@@ -85,7 +89,7 @@ object Application extends Controller {
   def query(id: String) = Action {
     URL.findById(id) match {
       case None => Ok(views.html.error())
-      case Some(url) => Redirect(url.ref)
+      case Some(url) => Redirect(normalizeURL(url.ref))
     }
   }
 
