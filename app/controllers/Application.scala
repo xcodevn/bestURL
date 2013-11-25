@@ -46,12 +46,18 @@ object Application extends Controller {
     val id = getID(data.id)
     val rl = URL.findById(id)
     if (rl != None) {
-      var count = 0;
-      while (URL.findById(id + count.toString) != None) count = count + 1
-      Ok("This id is existed, you can use " + id + count.toString + " instead!")
+      var count = 0
+      var s = ""
+      var i = id.length
+      while (i >= 1 && id(i-1) >= '0' && id(i-1) <='9') {s = id(i-1) + s; i = i - 1;}
+      if (s.length > 0) count = s.toInt
+      val newid = id.substring(0, i)
+
+      while (URL.findById(newid + count.toString) != None) count = count + 1
+      Ok(views.html.exist(id, data.ref, newid + count.toString ))
     } else {
       URL.insert(URL(Id(id), data.ref))
-      Ok(views.html.newurl(id))
+      Ok(views.html.newurl(id, data.ref))
     }
   }
 
@@ -69,6 +75,9 @@ object Application extends Controller {
     Ok(views.html.error())
   }
 
+  def about = Action {
+    Ok(views.html.about())
+  }
   def query(id: String) = Action {
     URL.findById(id) match {
       case None => Ok(views.html.error())

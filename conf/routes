@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index
 POST    /                           controllers.Application.submit
 GET     /error                      controllers.Application.error
+GET     /about                      controllers.Application.about
 GET     /:url                       controllers.Application.query(url: String)
 
 # Map static resources from the /public folder to the /assets URL path

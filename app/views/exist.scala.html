@@ -1,4 +1,4 @@
-@(url: String, ref:String)
+@(id:String, ref: String, url: String)
 @import helper._
 @import helper.twitterBootstrap._
 @import play.api.Play
@@ -8,23 +8,21 @@
 <div class="row">
 @helper.form(action = routes.Application.submit) {
 <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-	<p id="welcome"> A cool URL is generated ;)</p>
+	<p id="welcome"> Oops! It was existed :(</p>
       <input name="ref" id="inpurl" type="text" class="form-control inp" placeholder="Paste your URL here and [ENTER]" value="@ref">
 </div><!-- /.col-lg-6 -->
 
 <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-<p id="msg"> Your new URL: </p>
+<p id="msg"> or you can choose your favourite link </p>
     <div class="input-group">    
-  <span id="out" class="input-group-addon form-control" >@{Play.current.configuration.getString("hostname").getOrElse("") + url}</span>
-
+			<span class="input-group-addon inp">@Play.current.configuration.getString("hostname") </span>
+      <input name="id" type="text" class="form-control inp" placeholder="ID (optinal)" value="@id">
       <span class="input-group-btn">
-				<button onClick="copyToClipboard('@{Play.current.configuration.getString("hostname").getOrElse("") + url}');" class="btn btn-success" type="button">Copy</button>
+        <button class="btn btn-primary" type="submit button">Get URL</button>
       </span>
     </div><!-- /input-group -->
-  </div>
-
-
-</div>
+		<p class="warn"> This name is existed, you can choose another, such as <b>@url</b></p>
+  </div><!-- /.col-lg-6 -->
 <!-- /container -->
 }
 }

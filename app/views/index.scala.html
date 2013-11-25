@@ -8,15 +8,15 @@
 <div class="row">
 @helper.form(action = routes.Application.submit) {
 <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-	<p id="welcome"> GET THE SHORTEST URL!</p>
-      <input name="ref" id="inpurl" type="text" class="form-control inp" placeholder="Paste your URL here" >
+	<p id="welcome"> Getting more beautiful URLs :)</p>
+      <input name="ref" id="inpurl" type="text" class="form-control inp" placeholder="Paste your URL here and [ENTER]" >
 </div><!-- /.col-lg-6 -->
 
 <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-<p id="msg"> You also can choose your favourite link </p>
+<p id="msg"> or you can choose your favourite link </p>
     <div class="input-group">    
 			<span class="input-group-addon inp">@Play.current.configuration.getString("hostname") </span>
-      <input name="id" type="text" class="form-control inp" placeholder="Enter ID (optinal)" >
+      <input name="id" type="text" class="form-control inp" placeholder="ID (optinal)" >
       <span class="input-group-btn">
         <button class="btn btn-primary" type="submit button">Get URL</button>
       </span>
