@@ -1,0 +1,65 @@
+body {
+ background:url(
+data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAIElEQVQImWNgYGBgOLfrvxQDOsAQPLfrvxQ6xq4SmyAADTQXqqF5Aw4AAAAASUVORK5CYII=
+  ) repeat;
+}
+
+.container {
+	margin-top:50px;
+}
+
+.inp {
+	font-size:16px;
+	color:#8aa;
+	line-height:20px;
+	padding: 0;
+	padding-left:10px;
+
+	font-family: "Monospace";
+}
+
+#inpurl {
+	height: 50px;
+	color:#555;
+	font-size:20px;
+	font-family: "Monospace";
+	border-radius:0;
+	line-height:50px;
+}
+
+#msg{
+	font-size:22px;
+	font-family:"Waiting for the Sunrise";
+	color:#545;
+	margin-top:15px;
+}
+
+#welcome {
+	font-size:30px;
+	font-weight: bold;
+	color:#c5c;
+	margin-bottom:30px;
+	font-family:"Waiting for the Sunrise";
+	text-align:center;
+}
+
+#error {
+	font-size:30px;
+	font-weight: bold;
+	color:#c55;
+	margin-bottom:30px;
+	text-align:center;
+	font-family:"Waiting for the Sunrise";
+}
+
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {   
+border-color: rgba(126, 239, 104, 0.8);
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 1px rgba(126, 239, 104, 0.6);
+outline: 0 none;}
+
+#out {
+	font-size:16px;
+	color:#347;
+	font-family: "Monospace";
+	max-width:550px;
+}
