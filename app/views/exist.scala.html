@@ -8,12 +8,12 @@
 <div class="row">
 @helper.form(action = routes.Application.submit) {
 <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-	<p id="welcome"> Oops! It was existed :(</p>
+	<p id="welcome"> Oops! It existed :(</p>
       <input name="ref" id="inpurl" type="text" class="form-control inp" placeholder="Paste your URL here and [ENTER]" value="@ref">
 </div><!-- /.col-lg-6 -->
 
 <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-<p id="msg"> or you can choose your favourite link </p>
+<p id="msg"> or you can choose your favorite link </p>
     <div class="input-group">    
 			<span class="input-group-addon inp">@Play.current.configuration.getString("hostname") </span>
       <input name="id" type="text" class="form-control inp" placeholder="ID (optinal)" value="@id">
@@ -21,7 +21,7 @@
         <button class="btn btn-primary" type="submit button">Get URL</button>
       </span>
     </div><!-- /input-group -->
-		<p class="warn"> This name is existed, you can choose another, such as <b>@url</b></p>
+		<p class="warn"> This name existed, you can choose another id, such as <b>@url</b></p>
   </div><!-- /.col-lg-6 -->
 <!-- /container -->
 }
