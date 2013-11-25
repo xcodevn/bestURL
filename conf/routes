@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index
 POST    /                           controllers.Application.submit
 GET     /error                      controllers.Application.error
+GET     /api                        controllers.Application.api(id: Option[String], ref: String)
 GET     /about                      controllers.Application.about
 GET     /contact                    controllers.Application.contact
 GET     /:url                       controllers.Application.query(url: String)

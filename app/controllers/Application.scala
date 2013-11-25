@@ -28,7 +28,8 @@ object Application extends Controller {
   }
 
   def getID(id: Option[String]): String = id match {
-    case None => {
+    case Some(idt) if idt.length > 0 => idt
+    case _  => {
       val random = new scala.util.Random
       def randomString(alphabet: String)(n: Int): String = 
         Stream.continually(random.nextInt(alphabet.size)).map(alphabet).take(n).mkString
@@ -39,7 +40,6 @@ object Application extends Controller {
       while (URL.findById(rl) != None) rl = randomAlphanumericString(5)
       rl
     }
-    case Some(idt) => idt
   }
 
   def normalizeURL(url:String): String = {
@@ -73,6 +73,25 @@ object Application extends Controller {
       errors => BadRequest(views.html.index(errors)),
       url => addURL(url)
     )
+  }
+
+  def api(oid: Option[String], ref: String) = Action {
+    val id = getID(oid)
+    val rl = URL.findById(id)
+    if (rl != None) {
+      var count = 0
+      var s = ""
+      var i = id.length
+      while (i >= 1 && id(i-1) >= '0' && id(i-1) <='9') {s = id(i-1) + s; i = i - 1;}
+      if (s.length > 0) count = s.toInt
+      val newid = id.substring(0, i)
+
+      while (URL.findById(newid + count.toString) != None) count = count + 1
+      Ok("Use another id, such as " + newid + count.toString )
+    } else {
+      URL.insert(URL(Id(id), ref))
+      Ok(Play.current.configuration.getString("hostname").getOrElse("") + id )
+    }
   }
 
   def error = Action {
