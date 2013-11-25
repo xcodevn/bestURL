@@ -78,6 +78,10 @@ object Application extends Controller {
   def about = Action {
     Ok(views.html.about())
   }
+
+  def contact = Action {
+    Ok(views.html.contact())
+  }
   def query(id: String) = Action {
     URL.findById(id) match {
       case None => Ok(views.html.error())
