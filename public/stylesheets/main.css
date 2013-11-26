@@ -82,11 +82,15 @@ outline: 0 none;}
 }
 
 #news {
-	font-size:27px;
+	font-size:23px;
 	font-weight: bold;
 	color:#55c;
 	margin-bottom:30px;
 	text-align:center;
 	font-family:"Waiting for the Sunrise";
-	margin-top:100px;
+	margin-top:10px;
+}
+
+#footer {
+	margin-top:50px;
 }

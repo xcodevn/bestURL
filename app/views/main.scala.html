@@ -15,6 +15,8 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
     </head>
     <body>
+			<div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
+
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="containers">
@@ -38,7 +40,11 @@
     </div>
 
 		@content
+				<div id="footer" class="row">
+					<div class="col-md-3 col-md-offset-3 fb-like-box" data-href="http://www.facebook.com/pages/Beautiful-URLs/654569641231534" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="false" data-show-border="false" data-height="60px" data-width="70px"></div>
 
-		<div class="row" id="news" ><span class = "glyphicon glyphicon-bullhorn"></span><span> IN-COMMING CHROME EXTENSION!!<span> </div>
+		<div id="news" class="col-md-5"><span class = "glyphicon glyphicon-bullhorn"></span><span> IN-COMMING CHROME EXTENSION!!<span> </div>
+				</div>
+			</div>
     </body>
 </html>
